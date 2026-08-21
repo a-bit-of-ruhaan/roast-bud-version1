@@ -1,0 +1,164 @@
+@import url('https://googleapis.com');
+
+:root {
+  --bg-main: #0b0f19;       /* Deep slate/navy dark mode instead of pure pitch black */
+  --bg-card: #151b2c;       /* Clean panel color */
+  --border: #242f4d;        /* Soft border */
+  --text-main: #f3f4f6;     /* Clean off-white */
+  --text-muted: #9ca3af;    /* Standard muted gray */
+  --accent: #3b82f6;        /* Nice, reliable digital blue */
+  --success: #10b981;       /* Clean emerald green */
+}
+
+/* Cleaner, simpler base setup */
+html, body, [data-testid="stAppViewContainer"] {
+  background: var(--bg-main) !important;
+  color: var(--text-main) !important;
+  font-family: "Inter", sans-serif;
+}
+
+/* Stripped the complex grid/radial glows for a clean flat look */
+[data-testid="stAppViewContainer"] {
+  background-image: none !important;
+}
+
+[data-testid="stHeader"] {
+  background: transparent !important;
+}
+
+[data-testid="stToolbar"], footer {
+  display: none !important;
+}
+
+.main .block-container {
+  max-width: 800px !important;
+  padding: 2rem 1.5rem !important;
+}
+
+/* Straightforward flex layout */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Normal rounded icon */
+.brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.brand-status {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.brand-status span {
+  width: 8px;
+  height: 8px;
+  background: var(--success);
+  border-radius: 50%;
+}
+
+/* Clean, readable welcome header */
+.welcome-block {
+  margin-bottom: 2.5rem;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.welcome-block h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.welcome-block p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Simple, readable prompt tags */
+.prompt-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.prompt-row code {
+  color: var(--text-main);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+}
+
+/* Clean chat bubbles */
+[data-testid="stChatMessage"] {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+
+[data-testid="stChatMessage"] pre {
+  background: #0d111a !important;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+[data-testid="stChatMessage"] code {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 0.85rem;
+}
+
+/* Subtle background for assistant replies */
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) {
+  background: rgba(59, 130, 246, 0.03);
+}
+
+/* Standard dark input box styling */
+[data-testid="stChatInput"] {
+  background: var(--bg-main) !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+[data-testid="stChatInput"] textarea {
+  color: var(--text-main) !important;
+  font-family: "Inter", sans-serif !important;
+}
